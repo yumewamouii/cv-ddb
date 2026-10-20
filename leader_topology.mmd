@@ -1,0 +1,10 @@
+flowchart TD
+    W["Клиенты (запись)"] --> L["Лидер"]
+    L -- "WAL-журнал" --> R1["Реплика 1"]
+    L -- "WAL-журнал" --> R2["Реплика 2"]
+    U["Клиенты (чтение)"] --> R1
+    U --> R2
+    style L fill:#1a5276,color:#fff
+    style W fill:#d9822b,color:#fff
+    style R1 fill:#e8f2f7,stroke:#1a5276
+    style R2 fill:#e8f2f7,stroke:#1a5276
